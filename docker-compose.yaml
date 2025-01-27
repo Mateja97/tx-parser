@@ -1,0 +1,13 @@
+services:
+  tx-parser:
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tx-parser-app
+    environment:
+      SERVER_PORT: :8080
+      ETH_ADDRESS: https://ethereum-rpc.publicnode.com/
+    restart: always
+    ports:
+      - "8080:8080"
